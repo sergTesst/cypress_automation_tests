@@ -1,0 +1,12 @@
+{
+	"projectId": "qoz8xs",
+	"reporter": "cypress-mochawesome-reporter",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false,
+		"charts": true,
+    "saveHtml": true,
+    "saveJson": true,
+		"reportPageTitle": "login-page-report"
+  }
+}

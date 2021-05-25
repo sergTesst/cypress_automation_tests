@@ -1,0 +1,206 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-05-25T11:18:02.125Z",
+    "end": "2021-05-25T11:18:17.028Z",
+    "duration": 4363,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4f424c80-6039-4fe5-954a-febbf750ab8d",
+      "title": "",
+      "fullFile": "cypress/integration/spec.js",
+      "file": "cypress/integration/spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "has username to use",
+          "fullTitle": "has username to use",
+          "timedOut": null,
+          "duration": 34,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "expect(Cypress.env('username')).to.be.a('string');",
+          "err": {},
+          "uuid": "92c8bfb0-59db-45fc-abf8-9a2a40521a5e",
+          "parentUUID": "4f424c80-6039-4fe5-954a-febbf750ab8d",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "has password to use",
+          "fullTitle": "has password to use",
+          "timedOut": null,
+          "duration": 10,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "expect(Cypress.env('password')).to.be.a('string');",
+          "err": {},
+          "uuid": "b71efb82-48e8-4804-840f-1f373b6e8d2a",
+          "parentUUID": "4f424c80-6039-4fe5-954a-febbf750ab8d",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "92c8bfb0-59db-45fc-abf8-9a2a40521a5e",
+        "b71efb82-48e8-4804-840f-1f373b6e8d2a"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 44,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "3730c821-e2f8-4563-9e7e-33de2495338b",
+      "title": "",
+      "fullFile": "cypress/integration/login_tests/login.spec.js",
+      "file": "cypress/integration/login_tests/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1caeba32-345c-4bdf-8b97-b57de94a89c2",
+          "title": "Actions",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should show error message of unsuccessful login",
+              "fullTitle": "Actions should show error message of unsuccessful login",
+              "timedOut": null,
+              "duration": 1674,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "LoginPage.login(Cypress.env('username'), Cypress.env('password'));\nLoginPage.spanErrorMessage.should('have.text', 'No account found with that username.');",
+              "err": {},
+              "uuid": "a65f3a1f-c900-4c7b-aad3-9177ddebfce3",
+              "parentUUID": "1caeba32-345c-4bdf-8b97-b57de94a89c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show two error messages of not filling username and password",
+              "fullTitle": "Actions should show two error messages of not filling username and password",
+              "timedOut": null,
+              "duration": 295,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "LoginPage.btnSubmit.click();\nLoginPage.spanErrorMessageForUserName.should('have.text', 'Please enter username.');\nLoginPage.spanErrorMessageForPassword.should('have.text', 'Please enter your password.');",
+              "err": {},
+              "uuid": "2e24205c-6562-4385-b5dd-6a8091eb3ce3",
+              "parentUUID": "1caeba32-345c-4bdf-8b97-b57de94a89c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should be successfully logined",
+              "fullTitle": "Actions should be successfully logined",
+              "timedOut": null,
+              "duration": 2350,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "LoginPage.login(Cypress.env('username'), Cypress.env('password'));\ncy.location('pathname', {\n  timeout: 1000\n}).should('include', 'personal-profile');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 1000ms: expected '/qa-portal/registerlogin/registerlogin.php' to include 'personal-profile'",
+                "estack": "AssertionError: Timed out retrying after 1000ms: expected '/qa-portal/registerlogin/registerlogin.php' to include 'personal-profile'\n    at Context.eval (https://www.pecodesoftware.com/__cypress/tests?p=cypress\\integration\\login_tests\\login.spec.js:124:8)",
+                "diff": null
+              },
+              "uuid": "812bb215-0578-41f5-8aba-da882a5d1f2f",
+              "parentUUID": "1caeba32-345c-4bdf-8b97-b57de94a89c2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a65f3a1f-c900-4c7b-aad3-9177ddebfce3",
+            "2e24205c-6562-4385-b5dd-6a8091eb3ce3"
+          ],
+          "failures": [
+            "812bb215-0578-41f5-8aba-da882a5d1f2f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4319,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
